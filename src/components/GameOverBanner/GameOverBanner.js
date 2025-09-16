@@ -6,7 +6,7 @@ function GameOverBanner({ count, style, answer }) {
 
   setTimeout(() => {
     setIsHidden('visually-hidden');
-  }, 5000);
+  }, 3000);
 
   return <div className={`banner ${style} ${isHidden}`}>
     {style === GAME_OVER_STYLE_HAPPY && (
