@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GuessInput({ handleGuess }) {
+function GuessInput({ handleGuess, isGameOver }) {
   const [guess, setGuess] = React.useState('');
 
   const handleSubmit = (event) => {
@@ -19,7 +19,7 @@ function GuessInput({ handleGuess }) {
   return <div className="guess-input-wrapper">
     <form onSubmit={handleSubmit}>
       <label htmlFor="guess-input">Enter guess:</label>
-      <input id="guess-input" type="text" pattern="[A-Z]{5}" value={guess} onChange={(event) => setGuess(event.target.value.toUpperCase())} />
+      <input id="guess-input" disabled={isGameOver} type="text" pattern="[A-Z]{5}" value={guess} onChange={(event) => setGuess(event.target.value.toUpperCase())} />
     </form>
   </div>;
 }
