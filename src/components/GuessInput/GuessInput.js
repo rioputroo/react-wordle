@@ -1,15 +1,18 @@
 import React from 'react';
 
-function GuessInput() {
+function GuessInput({ handleGuess }) {
   const [guess, setGuess] = React.useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('GUESS:', guess);
+
     if (guess.length !== 5) {
-      console.log('GUESS MUST BE 5 LETTERS');
+      console.warn('GUESS MUST BE 5 LETTERS');
       return;
     }
+
+    handleGuess(guess);
+
     setGuess('');
   };
 
