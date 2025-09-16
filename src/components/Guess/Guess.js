@@ -1,13 +1,8 @@
 import React from 'react';
 import { range } from '../../utils';
-import { checkGuess } from '../../game-helpers';
 
-function Guess({ guess, answer }) {
-  let guessArray = ['', '', '', '', ''];
-
-  if (guess) {
-    guessArray = checkGuess(guess.guess, answer);
-  }
+function Guess({ guess }) {
+  const guessArray = guess ? guess : ['', '', '', '', ''];
 
   return <p className="guess">
     {range(5).map((v) => (
