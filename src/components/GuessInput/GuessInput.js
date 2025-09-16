@@ -13,7 +13,7 @@ function GuessInput() {
     setGuess('');
   };
 
-  return <div>
+  return <div className="guess-input-wrapper">
     <form onSubmit={handleSubmit}>
       <label htmlFor="guess-input">Enter guess:</label>
       <input id="guess-input" type="text" pattern="[A-Z]{5}" value={guess} onChange={(event) => setGuess(event.target.value.toUpperCase())} />
